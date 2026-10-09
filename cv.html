@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae — Fikri Arrahman | Mode Pratinjau Terproteksi</title>
+  <meta name="description" content="Pratinjau Curriculum Vitae resmi Fikri Arrahman — Software Engineer &amp; Mobile Developer.">
+  <link rel="icon" type="image/jpeg" href="assets/img/profile.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="assets/js/lucide.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      overflow: hidden;
+    }
+
+    /* Print Protection: Hide all document contents when printing */
+    @media print {
+      body * {
+        display: none !important;
+        visibility: hidden !important;
+      }
+      body::after {
+        content: "Dokumen ini dilindungi hak cipta dan tidak dapat dicetak.";
+        display: block !important;
+        visibility: visible !important;
+        font-size: 20pt;
+        text-align: center;
+        margin-top: 5cm;
+        color: #000;
+      }
+    }
+
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+
+    /* Watermark styling */
+    .watermark-overlay {
+      background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.02) 0,
+        rgba(255, 255, 255, 0.02) 80px,
+        transparent 80px,
+        transparent 160px
+      );
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 h-screen flex flex-col antialiased selection:bg-transparent">
+
+  <!-- Top Navigation & Control Bar -->
+  <header class="h-16 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 px-4 sm:px-6 flex items-center justify-between shrink-0 z-30">
+    <!-- Left: Back Button & Title -->
+    <div class="flex items-center gap-3 sm:gap-4">
+      <a href="index.html" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs sm:text-sm font-semibold transition-all border border-slate-700/80 shadow-sm" title="Kembali ke Portofolio Utama">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Portofolio</span>
+      </a>
+
+      <div class="hidden sm:block h-5 w-px bg-slate-800"></div>
+
+      <div class="flex flex-col">
+        <div class="flex items-center gap-2">
+          <h1 class="text-sm sm:text-base font-bold text-white tracking-tight">Curriculum Vitae</h1>
+          <span class="text-slate-500 text-xs hidden md:inline">•</span>
+          <span class="text-xs text-slate-300 font-medium hidden md:inline">Fikri Arrahman</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center: Protected Mode Status Badge -->
+    <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold">
+      <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
+      <span>Mode Pratinjau Dokumen (Unduhan Dinonaktifkan)</span>
+    </div>
+
+    <!-- Right: Zoom Controls -->
+    <div class="flex items-center gap-1.5 sm:gap-2">
+      <button id="zoom-out-btn" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors border border-slate-700/80" title="Perkecil (-)">
+        <i data-lucide="zoom-out" class="w-4 h-4"></i>
+      </button>
+
+      <span id="zoom-label" class="px-2.5 py-1 text-xs font-mono font-bold text-slate-200 bg-slate-950 rounded-lg border border-slate-800 min-w-[54px] text-center">
+        100%
+      </span>
+
+      <button id="zoom-in-btn" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors border border-slate-700/80" title="Perbesar (+)">
+        <i data-lucide="zoom-in" class="w-4 h-4"></i>
+      </button>
+
+      <div class="h-5 w-px bg-slate-800 mx-1"></div>
+
+      <button id="fit-width-btn" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors border border-slate-700/80 hidden sm:inline-flex items-center gap-1.5" title="Sesuaikan Lebar Layar">
+        <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+        <span>Pas Layar</span>
+      </button>
+
+      <a href="index.html#kontak" class="px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-semibold transition-colors shadow-sm shadow-blue-500/30 flex items-center gap-1.5 ml-1">
+        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+        <span class="hidden sm:inline">Hubungi Fikri</span>
+        <span class="sm:hidden">Kontak</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Document Viewport Desk -->
+  <main id="viewer-container" class="flex-1 overflow-auto bg-slate-950 p-4 sm:p-8 flex justify-center items-start relative select-none">
+    
+    <!-- Outer Document Frame -->
+    <div id="cv-wrapper" class="relative transition-all duration-150 origin-top my-auto sm:my-4">
+      
+      <!-- Real High-DPI Canvas Rendering -->
+      <canvas id="cv-canvas" class="block rounded-lg shadow-2xl shadow-black/80 border border-slate-800 bg-white" draggable="false"></canvas>
+
+      <!-- Security Overlay: Prevents drag, right click, or saving canvas image -->
+      <div id="security-overlay" class="absolute inset-0 rounded-lg pointer-events-auto watermark-overlay cursor-default" title="Dokumen Resmi Fikri Arrahman — Mode Pratinjau Terproteksi">
+        
+        <!-- Subtle floating protection notice watermark badge -->
+        <div class="absolute bottom-4 right-4 pointer-events-none opacity-40 hover:opacity-80 transition-opacity">
+          <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/90 text-[10px] font-mono text-slate-400 border border-slate-700/60 shadow-lg">
+            <i data-lucide="lock" class="w-3 h-3 text-amber-400"></i>
+            <span>PORTFOLIO PREVIEW • FIKRI ARRAHMAN</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Bottom Floating Notification Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-2xl bg-slate-900/95 border border-slate-700/80 shadow-2xl shadow-black/90 text-slate-200 text-xs sm:text-sm font-medium flex items-center gap-3 transition-all duration-300 opacity-0 pointer-events-none translate-y-4 backdrop-blur-md">
+    <div class="w-7 h-7 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0">
+      <i data-lucide="shield-alert" class="w-4 h-4"></i>
+    </div>
+    <span id="toast-message">Hak Cipta Dilindungi: Pengunduhan &amp; pencetakan dinonaktifkan.</span>
+  </div>
+
+  <!-- JavaScript Controls & Protection Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Initialize Icons
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      // 2. Elements & Canvas Setup
+      const canvas = document.getElementById('cv-canvas');
+      const ctx = canvas.getContext('2d');
+      const viewerContainer = document.getElementById('viewer-container');
+      const cvWrapper = document.getElementById('cv-wrapper');
+      const zoomLabel = document.getElementById('zoom-label');
+      const zoomInBtn = document.getElementById('zoom-in-btn');
+      const zoomOutBtn = document.getElementById('zoom-out-btn');
+      const fitWidthBtn = document.getElementById('fit-width-btn');
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+
+      let currentScale = 1.0;
+      let toastTimer = null;
+      let naturalWidth = 2066;
+      let naturalHeight = 2924;
+
+      // 3. Load High-Res Rendered CV Image onto Canvas
+      const cvImage = new Image();
+      cvImage.src = 'assets/img/cv/cv-fikri-arrahman.webp';
+      
+      // Fallback to PNG if webp fails
+      cvImage.onerror = () => {
+        cvImage.src = 'assets/img/cv/cv-fikri-arrahman.png';
+      };
+
+      cvImage.onload = () => {
+        naturalWidth = cvImage.naturalWidth || 2066;
+        naturalHeight = cvImage.naturalHeight || 2924;
+        
+        // Initial fit to screen
+        fitToWidth();
+      };
+
+      function renderCanvas() {
+        if (!cvImage.complete) return;
+
+        // Base display width
+        const baseWidth = Math.min(viewerContainer.clientWidth - 48, 860);
+        const displayWidth = Math.max(300, Math.round(baseWidth * currentScale));
+        const displayHeight = Math.round((displayWidth / naturalWidth) * naturalHeight);
+
+        // Canvas internal resolution (scaled for Retina / 4K crispness)
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = displayWidth * dpr;
+        canvas.height = displayHeight * dpr;
+
+        // Visual CSS size
+        canvas.style.width = displayWidth + 'px';
+        canvas.style.height = displayHeight + 'px';
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(cvImage, 0, 0, canvas.width, canvas.height);
+
+        // Update zoom label
+        zoomLabel.textContent = Math.round(currentScale * 100) + '%';
+      }
+
+      function setScale(newScale) {
+        currentScale = Math.min(Math.max(newScale, 0.45), 2.2);
+        renderCanvas();
+      }
+
+      function fitToWidth() {
+        const availableWidth = viewerContainer.clientWidth - (window.innerWidth < 640 ? 32 : 80);
+        const baseWidth = 860;
+        currentScale = Math.min(availableWidth / baseWidth, 1.25);
+        renderCanvas();
+      }
+
+      // Zoom Button Events
+      zoomInBtn.addEventListener('click', () => setScale(currentScale + 0.15));
+      zoomOutBtn.addEventListener('click', () => setScale(currentScale - 0.15));
+      fitWidthBtn.addEventListener('click', fitToWidth);
+
+      // Window resize adaptation
+      window.addEventListener('resize', () => {
+        renderCanvas();
+      });
+
+      // Mouse Wheel Zoom (with Ctrl key)
+      viewerContainer.addEventListener('wheel', (e) => {
+        if (e.ctrlKey) {
+          e.preventDefault();
+          const delta = e.deltaY < 0 ? 0.1 : -0.1;
+          setScale(currentScale + delta);
+        }
+      }, { passive: false });
+
+      // 4. Security & Protection Functions
+      function showSecurityNotice(msg) {
+        if (toastTimer) clearTimeout(toastTimer);
+        toastMessage.textContent = msg || 'Pengunduhan & pencetakan dinonaktifkan dalam mode pratinjau.';
+        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        toast.classList.add('opacity-100', 'translate-y-0');
+
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('opacity-100', 'translate-y-0');
+          toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        }, 3200);
+      }
+
+      // Disable Right Click (Context Menu)
+      document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        showSecurityNotice('Klik kanan dinonaktifkan: Dokumen dilindungi hak cipta.');
+      });
+
+      // Disable Drag and Drop
+      document.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+      });
+
+      // Disable Common Save / Print / Source Shortcuts
+      document.addEventListener('keydown', (e) => {
+        const key = e.key ? e.key.toLowerCase() : '';
+        
+        // Block Ctrl+S (Save), Ctrl+P (Print), Ctrl+U (View Source)
+        if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u'].includes(key)) {
+          e.preventDefault();
+          showSecurityNotice(`Pintasan tombol (Ctrl+${key.toUpperCase()}) dinonaktifkan pada dokumen ini.`);
+          return false;
+        }
+
+        // Block F12 (Inspect)
+        if (e.key === 'F12') {
+          e.preventDefault();
+          showSecurityNotice('Inspeksi dinonaktifkan.');
+          return false;
+        }
+
+        // Block Ctrl+Shift+I / Ctrl+Shift+C / Ctrl+Shift+J
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'c', 'j'].includes(key)) {
+          e.preventDefault();
+          showSecurityNotice('Peralatan pengembang dinonaktifkan.');
+          return false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
