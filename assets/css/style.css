@@ -1,0 +1,444 @@
+/* ==========================================================================
+   Modern & Interactive 3D Portfolio Styles
+   Author: Fikri Arrahman
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --primary-glow: rgba(37, 99, 235, 0.15);
+  --secondary-glow: rgba(99, 102, 241, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1e293b;
+  background-color: #f8fafc;
+  overflow-x: clip;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.04) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: 2px solid #f1f5f9;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ==========================================================================
+   Glassmorphism & Navbar
+   ========================================================================== */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-link.active {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #2563eb, #4f46e5);
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+}
+
+/* ==========================================================================
+   3D Icon Elements (Tactile, Depth, Lighting)
+   ========================================================================== */
+.icon-3d {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  color: #ffffff;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: perspective(600px) translateZ(0);
+}
+
+.icon-3d::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 60%);
+  pointer-events-none;
+}
+
+.icon-3d:hover {
+  transform: perspective(600px) translateY(-5px) scale(1.08) rotateX(8deg);
+}
+
+/* 3D Icon Variants */
+.icon-3d-blue {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  box-shadow: 0 10px 20px -4px rgba(37, 99, 235, 0.35),
+              0 4px 6px -2px rgba(37, 99, 235, 0.2),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+.icon-3d-blue:hover {
+  box-shadow: 0 16px 28px -4px rgba(37, 99, 235, 0.5),
+              0 8px 10px -3px rgba(37, 99, 235, 0.3),
+              inset 0 1px 2px 0 rgba(255, 255, 255, 0.6);
+}
+
+.icon-3d-indigo {
+  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+  box-shadow: 0 10px 20px -4px rgba(99, 102, 241, 0.35),
+              0 4px 6px -2px rgba(99, 102, 241, 0.2),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+.icon-3d-indigo:hover {
+  box-shadow: 0 16px 28px -4px rgba(99, 102, 241, 0.5),
+              0 8px 10px -3px rgba(99, 102, 241, 0.3),
+              inset 0 1px 2px 0 rgba(255, 255, 255, 0.6);
+}
+
+.icon-3d-emerald {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  box-shadow: 0 10px 20px -4px rgba(16, 185, 129, 0.35),
+              0 4px 6px -2px rgba(16, 185, 129, 0.2),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+.icon-3d-emerald:hover {
+  box-shadow: 0 16px 28px -4px rgba(16, 185, 129, 0.5),
+              0 8px 10px -3px rgba(16, 185, 129, 0.3),
+              inset 0 1px 2px 0 rgba(255, 255, 255, 0.6);
+}
+
+.icon-3d-amber {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 10px 20px -4px rgba(245, 158, 11, 0.35),
+              0 4px 6px -2px rgba(245, 158, 11, 0.2),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+.icon-3d-amber:hover {
+  box-shadow: 0 16px 28px -4px rgba(245, 158, 11, 0.5),
+              0 8px 10px -3px rgba(245, 158, 11, 0.3),
+              inset 0 1px 2px 0 rgba(255, 255, 255, 0.6);
+}
+
+
+/* ==========================================================================
+   Modern Cards & 3D Interactive Hover
+   ========================================================================== */
+.clean-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.clean-card:hover {
+  border-color: rgba(147, 197, 253, 0.7);
+  box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.12), 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+  transform: translateY(-5px);
+}
+
+/* 3D Card Depth Container */
+.card-3d-depth {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.card-3d-depth:hover {
+  transform: translateY(-6px) rotateX(1.5deg);
+  box-shadow: 0 25px 40px -12px rgba(30, 58, 138, 0.15);
+}
+
+/* ==========================================================================
+   Profile Photo 3D Frame & Aura
+   ========================================================================== */
+.photo-aura {
+  position: relative;
+}
+
+.photo-aura::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(99, 102, 241, 0.4), rgba(16, 185, 129, 0.3));
+  border-radius: 1.5rem;
+  z-index: -1;
+  filter: blur(12px);
+  opacity: 0.65;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.photo-aura:hover::after {
+  opacity: 0.95;
+  filter: blur(16px);
+}
+
+/* ==========================================================================
+   Ambient Floating Lights & Animations
+   ========================================================================== */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+@keyframes float-delay {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
+}
+
+.animate-float-delay {
+  animation: float-delay 7s ease-in-out 1.5s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.pulse-badge,
+.pulse-radar {
+  animation: pulse-ring 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+/* Shimmer Tag Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-badge {
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Floating WhatsApp Quick Action Button */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 5.5rem;
+  z-index: 45;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.whatsapp-float-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Timeline Custom Styles */
+.timeline-dot {
+  box-shadow: 0 0 0 4px #eff6ff, 0 4px 8px rgba(37, 99, 235, 0.2);
+}
+
+/* ==========================================================================
+   Typography & Interactive Glow Badges
+   ========================================================================== */
+
+.badge-3d {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  padding: 0.42rem 0.85rem;
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1.5px solid rgba(226, 232, 240, 0.95);
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+  transition: all 0.25s ease;
+  white-space: nowrap !important;
+}
+
+.badge-3d svg,
+.badge-3d i {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+}
+
+.badge-3d:hover {
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+  box-shadow: 0 6px 14px -2px rgba(37, 99, 235, 0.16);
+}
+
+/* ==========================================================================
+   Hero Instant Entrance Animations (Zero-Delay, Never Blank)
+   ========================================================================== */
+@keyframes heroEntranceFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade-in {
+  animation: heroEntranceFade 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-fade-in-delayed {
+  animation: heroEntranceFade 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s backwards;
+}
+
+/* ==========================================================================
+   Fail-Safe Scroll Reveal System (100% Reliable, Never Blank)
+   ========================================================================== */
+/* By default: ALL elements are 100% visible and interactive */
+[data-aos] {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Progressive enhancement: Only when IntersectionObserver is active */
+.has-scroll-reveal [data-aos]:not(.revealed) {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.has-scroll-reveal [data-aos="fade-right"]:not(.revealed) {
+  opacity: 0;
+  transform: translateX(-26px);
+}
+
+.has-scroll-reveal [data-aos="fade-left"]:not(.revealed) {
+  opacity: 0;
+  transform: translateX(26px);
+}
+
+.has-scroll-reveal [data-aos].revealed {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Staggered transition delays for natural cascade */
+.has-scroll-reveal [data-aos-delay="100"] { transition-delay: 100ms; }
+.has-scroll-reveal [data-aos-delay="150"] { transition-delay: 150ms; }
+.has-scroll-reveal [data-aos-delay="200"] { transition-delay: 200ms; }
+.has-scroll-reveal [data-aos-delay="250"] { transition-delay: 250ms; }
+.has-scroll-reveal [data-aos-delay="300"] { transition-delay: 300ms; }
+.has-scroll-reveal [data-aos-delay="400"] { transition-delay: 400ms; }
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   Utility Classes & Fallbacks (shadow-xs, spacing-18, project-card)
+   ========================================================================== */
+.shadow-xs {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.w-18 { width: 4.5rem; }
+.h-18 { height: 4.5rem; }
+
+@media (min-width: 640px) {
+  .sm\:w-18 { width: 4.5rem; }
+  .sm\:h-18 { height: 4.5rem; }
+}
+
+.project-card {
+  will-change: transform, opacity;
+}
+
+/* ==========================================================================
+   High-Contrast & Tactile Contact Form Inputs
+   ========================================================================== */
+.form-input-premium {
+  background-color: #ffffff !important;
+  border: 2px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.form-input-premium:hover {
+  border-color: #94a3b8 !important;
+}
+
+.form-input-premium:focus {
+  background-color: #ffffff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.16) !important;
+  outline: none !important;
+}
+
+.form-input-premium::placeholder {
+  color: #94a3b8 !important;
+  font-weight: 400 !important;
+}
+
+
