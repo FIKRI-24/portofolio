@@ -145,8 +145,15 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="beranda" class="relative pt-16 pb-24 md:pt-28 md:pb-32 overflow-hidden bg-gradient-to-b from-white to-slate-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="beranda" class="relative pt-16 pb-24 md:pt-28 md:pb-32 overflow-hidden bg-white">
+    <!-- Aesthetic Hero Background Art Layer (Crisp & Vivid High-Definition) -->
+    <div class="absolute inset-0 pointer-events-none select-none overflow-hidden z-0">
+      <img src="assets/img/hero-bg.jpg?v=2" alt="Aesthetic Tech Background" class="w-full h-full object-cover object-center lg:object-right opacity-90 sm:opacity-95">
+      <!-- Seamless fade into the next section at the bottom edge -->
+      <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-slate-50 to-transparent"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <!-- Left Hero Column -->
@@ -269,15 +276,16 @@
               <span>Hubungi Saya</span>
             </a>
 
-            <a href="#pengalaman" class="px-4 py-3.5 text-slate-500 hover:text-blue-600 text-sm font-semibold flex items-center gap-1.5 transition-colors group">
-              <span>Lihat Pengalaman MBKM</span>
-              <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            <a href="#pengalaman" class="px-4 py-3.5 rounded-xl bg-white/90 hover:bg-white text-slate-950 hover:text-blue-600 text-sm font-bold border border-slate-200/90 shadow-sm hover:shadow hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 backdrop-blur-md group">
+              <i data-lucide="briefcase" class="w-4 h-4 text-blue-600 group-hover:scale-110 transition-transform"></i>
+              <span class="text-slate-950 group-hover:text-blue-600 transition-colors">Lihat Pengalaman MBKM</span>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-blue-600 group-hover:translate-x-1 transition-all"></i>
             </a>
           </div>
 
           <!-- Social Quick Links -->
           <div class="pt-6 border-t border-slate-200/80 flex items-center gap-4">
-            <span class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Terhubung:</span>
+            <span class="text-xs uppercase font-bold text-slate-700 tracking-wider">Terhubung:</span>
             <div class="flex items-center gap-2.5">
               <a href="https://github.com/FIKRI-24" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-950 hover:border-slate-400 hover:shadow-sm hover:-translate-y-0.5 transition-all" title="GitHub Profile">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -301,10 +309,6 @@
 
         <!-- Right Hero Column: Visual 3D Card -->
         <div class="lg:col-span-5 relative hero-fade-in-delayed">
-          <!-- Ambient Background Blur with Animation -->
-          <div class="absolute -top-12 -left-12 w-64 h-64 bg-blue-200/60 rounded-full blur-3xl opacity-70 pointer-events-none animate-float"></div>
-          <div class="absolute -bottom-12 -right-12 w-64 h-64 bg-indigo-200/60 rounded-full blur-3xl opacity-70 pointer-events-none animate-float-delay"></div>
-
           <!-- 3D Card Container -->
           <div class="relative bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-2xl shadow-slate-200/70 card-3d-depth">
             <!-- Profile Avatar with 3D Aura & Visual Details -->
